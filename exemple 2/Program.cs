@@ -13,6 +13,7 @@ namespace UniqueWords
         static void Main(string[] args)
         {
             string inputFile =@"C:\Users\Viktoria\Downloads\tolstoj_lew_nikolaewich-text_0040.fb2\tolstoj_lew_nikolaewich-text_0040.fb2";
+            //DDtest\exemple 2\tolstoj_lew_nikolaewich-text_0040.fb2" относительный путь 
             // изначальный файл 
             string outputFile = @"C:\Users\Viktoria\Source\Repos\UniqueWords\UniqueWords\outputText.txt";
             // файл результата
