@@ -20,7 +20,7 @@ namespace UniqueWords
             // метод открывает файл считывает текст в заданной кодировке
             char[] UnwantedSigns = new char[] { ' ', ',', '.', '!', '?', ';', ':', '-', '\n', '\r', '\t', };
             // разделители
-            //string greattext = Regex.Replace(text, "[<\w*>]", "");
+            string greattext = Regex.Replace(text, "[<...>|</...>]");
             // попытка убрать текст веб разметки
             string[] words = greattext.Split(UnwantedSigns, StringSplitOptions.RemoveEmptyEntries);
             // разделение слов
