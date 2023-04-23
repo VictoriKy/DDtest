@@ -1,0 +1,7 @@
+C:\Users\Viktoria\Source\Repos\UniqueWords\UniqueWords\bin\Debug\UniqueWords.exe.config
+C:\Users\Viktoria\Source\Repos\UniqueWords\UniqueWords\bin\Debug\UniqueWords.exe
+C:\Users\Viktoria\Source\Repos\UniqueWords\UniqueWords\bin\Debug\UniqueWords.pdb
+C:\Users\Viktoria\Source\Repos\UniqueWords\UniqueWords\obj\Debug\UniqueWords.csprojAssemblyReference.cache
+C:\Users\Viktoria\Source\Repos\UniqueWords\UniqueWords\obj\Debug\UniqueWords.csproj.CoreCompileInputs.cache
+C:\Users\Viktoria\Source\Repos\UniqueWords\UniqueWords\obj\Debug\UniqueWords.exe
+C:\Users\Viktoria\Source\Repos\UniqueWords\UniqueWords\obj\Debug\UniqueWords.pdb
