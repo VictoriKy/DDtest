@@ -4,6 +4,20 @@
 3.	Отдел, с максимальной суммарной зарплатой сотрудников. 
 4.	Сотрудника, чье имя начинается на «Р» и заканчивается на «н».
 
+таблица была создана и использованна с https://www.mycompiler.io/new/sql
+CREATE table departmen (id INTEGER PRIMARY KEY,name varchar(100));
+CREATE TABLE emploee (id INTEGER PRIMARY KEY,departmen_id INTEGER,chief_id INTEGER,name varchar(100),salary INTEGER,foreign KEY( departmen_id) references departmen ( id),foreign KEY( chief_id) references emploee ( id));
+-- insert some values
+INSERT INTO departmen VALUES (101, 'Departmen1');
+INSERT INTO departmen VALUES (102, 'Departmen2');
+INSERT INTO departmen VALUES (103, 'Departmen3');
+INSERT INTO emploee VALUES (001, 101, null , 'Joanna', 700000);
+INSERT INTO emploee VALUES (002, 101, 001, 'Роналун', 90000);
+INSERT INTO emploee VALUES (003, 101, 002, 'Ann', 10000);
+INSERT INTO emploee VALUES (004, 102, 001, 'Рон', 500000);
+INSERT INTO emploee VALUES (005, 102, 003, 'Ivan', 9000);
+INSERT INTO emploee VALUES (006, 103, 001, 'Ann', 1000000);
+
 Решение 
 
 1.	
@@ -17,5 +31,31 @@ FROM emploee where
 salary = ( select max(salary) from employee )
 
 2.
+WITH RECURSIVE levn AS (
+   SELECT 1 AS lvl, chief_id, id, name
+   FROM emploee
+   WHERE chief_id IS NULL
+   UNION ALL
+   SELECT lvl + 1, emploee.chief_id, emploee.Id, emploee.name
+   FROM emploee
+   JOIN levn
+     ON emploee.chief_id = levn.id
+)
+SELECT *
+FROM levn;
 
+3.
+with BESTdep as (select 
+departmen.name, 
+sum(salary) as salary
+from emploee
+join departmen on departmen.id = emploee.departmen_id
+group by departmen.name)
+select name
+from BESTdep
+where BESTdep.salary = (select max(salary) from BESTdep)
 
+4.
+select name
+from emploee
+where name like 'Р%н';
